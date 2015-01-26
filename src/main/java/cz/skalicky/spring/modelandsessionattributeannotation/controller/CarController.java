@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.beust.jcommander.Parameter;
-
 import cz.skalicky.spring.modelandsessionattributeannotation.model.CarOrder;
 import cz.skalicky.spring.modelandsessionattributeannotation.model.CarTypeEnum;
 
@@ -30,7 +28,7 @@ public class CarController {
     @RequestMapping(value = GET_CAR_ORDER_URI, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public CarOrder computePrice(@ModelAttribute("order") CarOrder carOrder) {
 
-        if ((carOrder.getCarType() == CarTypeEnum.COMBI.getId()) && ("Octavia".equals(carOrder.getCarModel()))) {
+        if ((carOrder.getCarType() == CarTypeEnum.COMBI) && ("Octavia".equals(carOrder.getCarModel()))) {
             carOrder.setTotalPrice(16_000);
         } else {
             carOrder.setTotalPrice(0);

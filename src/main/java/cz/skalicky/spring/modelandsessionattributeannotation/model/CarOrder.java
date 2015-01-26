@@ -2,7 +2,7 @@ package cz.skalicky.spring.modelandsessionattributeannotation.model;
 
 public class CarOrder {
 
-    private int carType;
+    private CarTypeEnum carType;
 
     private CarBrandEnum carBrand;
 
@@ -15,11 +15,11 @@ public class CarOrder {
     public CarOrder() {
     }
 
-    public int getCarType() {
+    public CarTypeEnum getCarType() {
         return carType;
     }
 
-    public void setCarType(int carType) {
+    public void setCarType(CarTypeEnum carType) {
         this.carType = carType;
     }
 
